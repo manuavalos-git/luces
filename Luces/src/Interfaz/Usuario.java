@@ -18,6 +18,7 @@ public class Usuario {
 
 	private JFrame frame;
 	private JTable table;
+	private JRadioButton [][] botones;
 //
 
 	/**
@@ -56,6 +57,7 @@ public class Usuario {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
+		botones=new JRadioButton [4][4];
 		iniciarFila0(panel);
 		iniciarFila1(panel);
 		iniciarFila2(panel);
@@ -78,6 +80,7 @@ public class Usuario {
 		boton30.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton30.setBackground(Color.DARK_GRAY);
 		panel.add(boton30);
+		botones[3][0]=boton30;
 		
 		JRadioButton boton31 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton31.setBounds(128, 280, 45, 45);
@@ -85,6 +88,7 @@ public class Usuario {
 		boton31.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton31.setBackground(Color.DARK_GRAY);
 		panel.add(boton31);
+		botones[3][1]=boton31;
 		
 		JRadioButton boton32 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton32.setBounds(228, 280, 45, 45);
@@ -92,6 +96,7 @@ public class Usuario {
 		boton32.setName("32");
 		boton32.setBackground(Color.DARK_GRAY);
 		panel.add(boton32);
+		botones[3][2]=boton32;
 		
 		JRadioButton boton33 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton33.setBounds(328, 280, 45, 45);
@@ -99,7 +104,7 @@ public class Usuario {
 		boton33.setName("33");
 		boton33.setBackground(Color.DARK_GRAY);
 		panel.add(boton33);
-		
+		botones[3][3]=boton33;
 	}
 	private void iniciarFila2(JPanel panel) {
 		JRadioButton boton20 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
@@ -108,6 +113,7 @@ public class Usuario {
 		boton20.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton20.setBackground(Color.DARK_GRAY);
 		panel.add(boton20);
+		botones[2][0]=boton20;
 		
 		JRadioButton boton21 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton21.setBounds(128, 210, 45, 45);
@@ -115,6 +121,7 @@ public class Usuario {
 		boton21.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton21.setBackground(Color.DARK_GRAY);
 		panel.add(boton21);
+		botones[2][1]=boton21;
 		
 		JRadioButton boton22 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton22.setBounds(228, 210, 45, 45);
@@ -122,6 +129,7 @@ public class Usuario {
 		boton22.setName("22");
 		boton22.setBackground(Color.DARK_GRAY);
 		panel.add(boton22);
+		botones[2][2]=boton22;
 		
 		JRadioButton boton23 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton23.setBounds(328, 210, 45, 45);
@@ -129,7 +137,7 @@ public class Usuario {
 		boton23.setName("23");
 		boton23.setBackground(Color.DARK_GRAY);
 		panel.add(boton23);
-		
+		botones[2][3]=boton23;
 	}
 
 	private void iniciarFila1(JPanel panel) {
@@ -139,6 +147,7 @@ public class Usuario {
 		boton10.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton10.setBackground(Color.DARK_GRAY);
 		panel.add(boton10);
+		botones[1][0]=boton10;
 		
 		JRadioButton boton11 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton11.setBounds(128, 140, 45, 45);
@@ -146,6 +155,7 @@ public class Usuario {
 		boton11.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton11.setBackground(Color.DARK_GRAY);
 		panel.add(boton11);
+		botones[1][1]=boton11;
 		
 		JRadioButton boton12 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton12.setBounds(228, 140, 45, 45);
@@ -153,6 +163,7 @@ public class Usuario {
 		boton12.setName("12");
 		boton12.setBackground(Color.DARK_GRAY);
 		panel.add(boton12);
+		botones[1][2]=boton12;
 		
 		JRadioButton boton13 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton13.setBounds(328, 140, 45, 45);
@@ -160,7 +171,7 @@ public class Usuario {
 		boton13.setName("13");
 		boton13.setBackground(Color.DARK_GRAY);
 		panel.add(boton13);
-		
+		botones[1][3]=boton13;
 	}
 
 	private void iniciarFila0(JPanel panel) {
@@ -170,6 +181,7 @@ public class Usuario {
 		boton0.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton0.setBackground(Color.DARK_GRAY);
 		panel.add(boton0);
+		botones[0][0]=boton0;
 		
 		JRadioButton boton1 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton1.setBounds(128, 70, 45, 45);
@@ -177,6 +189,7 @@ public class Usuario {
 		boton1.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton1.setBackground(Color.DARK_GRAY);
 		panel.add(boton1);
+		botones[0][1]=boton1;
 		
 		JRadioButton boton2 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton2.setBounds(228, 70, 45, 45);
@@ -184,6 +197,7 @@ public class Usuario {
 		boton2.setName("2");
 		boton2.setBackground(Color.DARK_GRAY);
 		panel.add(boton2);
+		botones[0][2]=boton2;
 		
 		JRadioButton boton3 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
 		boton3.setBounds(328, 70, 45, 45);
@@ -191,5 +205,6 @@ public class Usuario {
 		boton3.setName("3");
 		boton3.setBackground(Color.DARK_GRAY);
 		panel.add(boton3);
+		botones[0][3]=boton3;
 	}
 }
