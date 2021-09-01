@@ -19,10 +19,6 @@ public class MVC {
 				try {
 					controlador.getUsuario().getFrame().setVisible(true);
 					controlador.iniciarControlador();
-//					while(controlador.getTablero().faltaResolver()) {
-//						controlador.checkJuego()
-//					}
-					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

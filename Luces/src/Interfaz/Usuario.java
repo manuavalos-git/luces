@@ -18,6 +18,10 @@ import javax.swing.JProgressBar;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.Icon;
+import java.awt.Dimension;
+import javax.swing.JEditorPane;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
+import java.awt.Label;
 
 public class Usuario {
 
@@ -26,6 +30,7 @@ public class Usuario {
 						boton20,boton21,boton22,boton23,boton10,boton11,boton12,boton13,
 						boton0,boton1,boton2,boton3;
 	private JPanel panel;
+	private JButton btnNewButton;
 	//
 
 	/**
@@ -61,6 +66,24 @@ public class Usuario {
 		lblNewLabel.setSize(50, 288);
 		panel.add(lblNewLabel);
 		
+		JLabel lblNewLabel_1 = new JLabel("Intentos :");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Rockwell", Font.BOLD, 16));
+		lblNewLabel_1.setBounds(397, 84, 108, 31);
+		panel.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(Usuario.class.getResource("/recursos/instruc.png")));
+		lblNewLabel_2.setBounds(52, 85, 321, 203);
+		panel.add(lblNewLabel_2);
+		
+		btnNewButton = new JButton("Jugar");
+		btnNewButton.setBackground(new Color(173, 216, 230));
+		btnNewButton.setBorder(null);
+		btnNewButton.setForeground(Color.DARK_GRAY);
+		btnNewButton.setFont(new Font("Berlin Sans FB", Font.BOLD, 26));
+		btnNewButton.setBounds(397, 272, 108, 38);
+		panel.add(btnNewButton);
 		
 		iniciarFila0(panel);
 		iniciarFila1(panel);

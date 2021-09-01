@@ -32,9 +32,14 @@ public class Controlador  {
 		//cargo los botones a una matriz
 		asignarBotones();
 		//prendo las luces en el tablero
-		this.tablero.prenderLuzInicio(5);
+		this.tablero.prenderLuzInicio(15);
 		//prendo las luces en los botones
 		prenderLuzInicioBotones();
+		//controla que luz es pulsada
+		controlDeLuces();
+				
+	}
+	private void controlDeLuces() {
 		controlBoton0();
 		controlBoton1();
 		controlBoton2();
@@ -51,7 +56,6 @@ public class Controlador  {
 		controlBoton31();
 		controlBoton32();
 		controlBoton33();
-				
 	}
 	private void controlBoton0() {
 		ActionListener b0=new ActionListener() {
