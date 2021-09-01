@@ -18,6 +18,10 @@ public class MVC {
 			public void run() {
 				try {
 					controlador.getUsuario().getFrame().setVisible(true);
+					controlador.iniciarControlador();
+//					while(controlador.getTablero().faltaResolver()) {
+//						controlador.checkJuego()
+//					}
 					
 				} catch (Exception e) {
 					e.printStackTrace();

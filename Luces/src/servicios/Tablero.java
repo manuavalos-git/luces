@@ -10,7 +10,7 @@ public class Tablero {
 		this.tabla =new boolean [fYc][fYc];
 		this.filasYColum=fYc;
 	}
-	protected boolean faltaResolver(){
+	public boolean faltaResolver(){
 		boolean faltaResolver=false;
 		for(int fila=0;fila<this.filasYColum;fila++) {
 			for(int colum=0;colum<this.filasYColum;colum++) {
@@ -22,7 +22,7 @@ public class Tablero {
 		}
 		return faltaResolver;
 	}
-	protected void prenderLuzInicio(int cantLuces) {
+	public void prenderLuzInicio(int cantLuces) {
 		for(int i=0;i<cantLuces;i++) {
 			Random random1=new Random();
 			Random random2=new Random();
@@ -39,7 +39,7 @@ public class Tablero {
 			this.tabla[fila][colum] =true;
 		}	
 	}
-	protected void click(int fila,int colum){
+	public void click(int fila,int colum){
 		cambiarEstadoLuz(fila, colum);
 			if(fila>0 && fila<this.filasYColum-1 && colum>0 && colum<this.filasYColum-1) {
 				cambiarEstadoLuz(fila-1, colum);
@@ -52,7 +52,7 @@ public class Tablero {
 					cambiarEstadoLuz(fila, colum+1);
 					cambiarEstadoLuz(fila+1, colum);
 				}
-				else if(colum==4) {
+				else if(colum==3) {
 					cambiarEstadoLuz(fila, colum-1);
 					cambiarEstadoLuz(fila+1, colum);
 				}
@@ -67,7 +67,7 @@ public class Tablero {
 					cambiarEstadoLuz(fila, colum+1);
 					cambiarEstadoLuz(fila-1, colum);
 				}
-				else if(colum==4) {
+				else if(colum==3) {
 					cambiarEstadoLuz(fila, colum-1);
 					cambiarEstadoLuz(fila-1, colum);
 				}
@@ -89,7 +89,7 @@ public class Tablero {
 			}
 	}
 	
-	protected boolean getEstado(int fila,int colum) {
+	public boolean getEstado(int fila,int colum) {
 		return this.tabla[fila][colum];
 	}
 	                          

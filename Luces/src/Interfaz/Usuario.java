@@ -17,6 +17,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JProgressBar;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
+import javax.swing.Icon;
 
 public class Usuario {
 
@@ -60,12 +61,11 @@ public class Usuario {
 		lblNewLabel.setSize(50, 288);
 		panel.add(lblNewLabel);
 		
+		
 		iniciarFila0(panel);
 		iniciarFila1(panel);
 		iniciarFila2(panel);
 		iniciarFila3(panel);
-		
-		
 		
 	}
 	public void setFrame(JFrame frame) {
@@ -257,5 +257,4 @@ public class Usuario {
 	public JRadioButton getBoton3() {
 		return boton3;
 	}
-
 }
