@@ -23,7 +23,7 @@ public class Tablero {
 		}
 		return faltaResolver;
 	}
-	public void prenderLuzInicio(int cantLuces) {
+	public void prenderLuzInicio() {
 		elegirCuadro();
 	}
 	private void elegirCuadro() {

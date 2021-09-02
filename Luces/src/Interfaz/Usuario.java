@@ -30,7 +30,9 @@ public class Usuario {
 						boton20,boton21,boton22,boton23,boton10,boton11,boton12,boton13,
 						boton0,boton1,boton2,boton3;
 	private JPanel panel;
-	private JButton btnNewButton;
+	private JButton btnJugar;
+	private JLabel intrucciones, ganaste ;
+	private JButton btnReiniciar;
 	//
 
 	/**
@@ -40,6 +42,7 @@ public class Usuario {
 	/**
 	 * Create the application.
 	 */
+
 	public Usuario() {
 		initialize();
 	}
@@ -52,8 +55,7 @@ public class Usuario {
 		getFrame().setBounds(100, 100, 600, 400);
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		panel = new JPanel();
-		panel.setVisible(false);
+		this.panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
 		getFrame().getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
@@ -74,25 +76,23 @@ public class Usuario {
 		lblNewLabel_1.setBounds(397, 84, 108, 31);
 		panel.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon(Usuario.class.getResource("/recursos/instruc.png")));
-		lblNewLabel_2.setBounds(52, 70, 321, 203);
-		panel.add(lblNewLabel_2);
+		intrucciones = new JLabel("");
+		intrucciones.setIcon(new ImageIcon(Usuario.class.getResource("/recursos/instruc.png")));
+		intrucciones.setBounds(52, 70, 321, 203);
+		panel.add(intrucciones);
 		
-		btnNewButton = new JButton("Jugar");
-		btnNewButton.setBackground(new Color(173, 216, 230));
-		btnNewButton.setBorder(null);
-		btnNewButton.setForeground(Color.DARK_GRAY);
-		btnNewButton.setFont(new Font("Berlin Sans FB", Font.BOLD, 26));
-		btnNewButton.setBounds(397, 273, 108, 38);
-		panel.add(btnNewButton);
+		btnJugar = new JButton("Jugar");
+		btnJugar.setFocusPainted(false);
+		btnJugar.setBorder(null);
+		btnJugar.setBorderPainted(false);
+		btnJugar.setBackground(new Color(173, 216, 230));
+		btnJugar.setForeground(Color.DARK_GRAY);
+		btnJugar.setFont(new Font("Berlin Sans FB", Font.BOLD, 26));
+		btnJugar.setBounds(397, 273, 108, 38);
+		panel.add(btnJugar);
 		
-		iniciarFila0(panel);
-		iniciarFila1(panel);
-		iniciarFila2(panel);
-		iniciarFila3(panel);
-		
-		JButton btnReiniciar = new JButton("Reiniciar");
+		btnReiniciar = new JButton("Reiniciar");
+		btnReiniciar.setFocusPainted(false);
 		btnReiniciar.setVisible(false);
 		btnReiniciar.setEnabled(false);
 		btnReiniciar.setForeground(Color.DARK_GRAY);
@@ -102,7 +102,28 @@ public class Usuario {
 		btnReiniciar.setBounds(383, 273, 131, 38);
 		panel.add(btnReiniciar);
 		
+		ganaste = new JLabel("");
+		ganaste.setVisible(false);
+		ganaste.setIcon(new ImageIcon(Usuario.class.getResource("/recursos/ganaste.png")));
+		ganaste.setBounds(51, 145, 300, 110);
+		panel.add(ganaste);
+		
+		iniciarFila0(panel);
+		iniciarFila1(panel);
+		iniciarFila2(panel);
+		iniciarFila3(panel);
+		
+		
 	}
+	
+	public JLabel getGanaste() {
+		return ganaste;
+	}
+
+	public JButton getBtnJugar() {
+		return btnJugar;
+	}
+
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
 	}
@@ -324,4 +345,12 @@ public class Usuario {
 	public JRadioButton getBoton3() {
 		return boton3;
 	}
+	public JButton getBtnReiniciar() {
+		return btnReiniciar;
+	}
+
+	public JLabel getIntrucciones() {
+		return intrucciones;
+	}
+	
 }

@@ -23,6 +23,7 @@ public class Controlador  {
 	private Usuario usuario;
 	private Tablero tablero;
 	private JRadioButton[][] botones;
+	private ActionListener b0;
 	
 	public Controlador(Usuario usuario,Tablero tablero) {
 		this.usuario=usuario;
@@ -32,14 +33,24 @@ public class Controlador  {
 		//cargo los botones a una matriz
 		asignarBotones();
 		//prendo las luces en el tablero
-		this.tablero.prenderLuzInicio(15);
+		this.tablero.prenderLuzInicio();
 		//prendo las luces en los botones
 		prenderLuzInicioBotones();
 		//controla que luz o boton es pulsado
 		controlListener();
 				
 	}
+	public void iniciarControladorReinicio() {
+				//cargo los botones a una matriz
+				asignarBotones();
+				//prendo las luces en el tablero
+				this.tablero.prenderLuzInicio();
+				//prendo las luces en los botones
+				prenderLuzInicioBotones();
+	}
 	private void controlListener() {
+		controlJugar();
+		controlReiniciar();
 		controlBoton0();
 		controlBoton1();
 		controlBoton2();
@@ -57,8 +68,80 @@ public class Controlador  {
 		controlBoton32();
 		controlBoton33();
 	}
+	private void mostrarFocos() {
+		usuario.getBoton0().setVisible(true);
+		usuario.getBoton1().setVisible(true);
+		usuario.getBoton2().setVisible(true);
+		usuario.getBoton3().setVisible(true);
+		usuario.getBoton10().setVisible(true);
+		usuario.getBoton11().setVisible(true);
+		usuario.getBoton12().setVisible(true);
+		usuario.getBoton13().setVisible(true);
+		usuario.getBoton20().setVisible(true);
+		usuario.getBoton21().setVisible(true);
+		usuario.getBoton22().setVisible(true);
+		usuario.getBoton23().setVisible(true);
+		usuario.getBoton30().setVisible(true);
+		usuario.getBoton31().setVisible(true);
+		usuario.getBoton32().setVisible(true);
+		usuario.getBoton33().setVisible(true);
+	}
+	private void habilitarFocos() {
+		usuario.getBoton0().setEnabled(true);
+		usuario.getBoton1().setEnabled(true);
+		usuario.getBoton2().setEnabled(true);
+		usuario.getBoton3().setEnabled(true);
+		usuario.getBoton10().setEnabled(true);
+		usuario.getBoton11().setEnabled(true);
+		usuario.getBoton12().setEnabled(true);
+		usuario.getBoton13().setEnabled(true);
+		usuario.getBoton20().setEnabled(true);
+		usuario.getBoton21().setEnabled(true);
+		usuario.getBoton22().setEnabled(true);
+		usuario.getBoton23().setEnabled(true);
+		usuario.getBoton30().setEnabled(true);
+		usuario.getBoton31().setEnabled(true);
+		usuario.getBoton32().setEnabled(true);
+		usuario.getBoton33().setEnabled(true);
+	}
+	private void controlReiniciar() {
+		
+		ActionListener bR=new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(!tablero.faltaResolver()) {
+					usuario.getGanaste().setVisible(false);
+					mostrarFocos();
+				}
+				iniciarControladorReinicio();
+			}
+			
+		};
+		this.usuario.getBtnReiniciar().addActionListener(bR);
+	}
+	private void controlJugar() {
+		ActionListener bJ=new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//habilito los focos
+				mostrarFocos();
+				habilitarFocos();
+				//oculto instrucciones
+				usuario.getIntrucciones().setVisible(false);
+				//habilito boton reiniciar
+				usuario.getBtnReiniciar().setVisible(true);
+				usuario.getBtnReiniciar().setEnabled(true);
+				//deshabilito boton jugar
+				usuario.getBtnJugar().setVisible(false);
+				usuario.getBtnJugar().setEnabled(false);
+			}
+		};
+		this.usuario.getBtnJugar().addActionListener(bJ);
+	}
 	private void controlBoton0() {
-		ActionListener b0=new ActionListener() {
+		b0=new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -351,9 +434,6 @@ public class Controlador  {
 			}
 		}
 		//poner cartel
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(Usuario.class.getResource("/recursos/ganaste.png")));
-		lblNewLabel_1.setBounds(51, 145, 300, 110);
-		this.usuario.getPanel().add(lblNewLabel_1);
+		this.usuario.getGanaste().setVisible(true);
 	}
 }
