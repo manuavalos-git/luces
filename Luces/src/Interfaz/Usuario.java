@@ -3,25 +3,14 @@ package Interfaz;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.EventQueue;
 import java.awt.Font;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTable;
 import javax.swing.SwingConstants;
-import javax.swing.JProgressBar;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
-import javax.swing.Icon;
-import java.awt.Dimension;
-import javax.swing.JEditorPane;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
-import java.awt.Label;
 
 public class Usuario {
 

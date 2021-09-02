@@ -1,21 +1,9 @@
 package control;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.EventQueue;
-import java.awt.Font;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
 import javax.swing.JRadioButton;
-import javax.swing.SwingConstants;
-
 import Interfaz.Usuario;
 import servicios.Tablero;
 
