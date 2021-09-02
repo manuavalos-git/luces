@@ -53,6 +53,7 @@ public class Usuario {
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		panel = new JPanel();
+		panel.setVisible(false);
 		panel.setBackground(Color.DARK_GRAY);
 		getFrame().getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
@@ -67,6 +68,7 @@ public class Usuario {
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Intentos :");
+		lblNewLabel_1.setVisible(false);
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("Rockwell", Font.BOLD, 16));
 		lblNewLabel_1.setBounds(397, 84, 108, 31);
@@ -74,7 +76,7 @@ public class Usuario {
 		
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setIcon(new ImageIcon(Usuario.class.getResource("/recursos/instruc.png")));
-		lblNewLabel_2.setBounds(52, 85, 321, 203);
+		lblNewLabel_2.setBounds(52, 70, 321, 203);
 		panel.add(lblNewLabel_2);
 		
 		btnNewButton = new JButton("Jugar");
@@ -82,7 +84,7 @@ public class Usuario {
 		btnNewButton.setBorder(null);
 		btnNewButton.setForeground(Color.DARK_GRAY);
 		btnNewButton.setFont(new Font("Berlin Sans FB", Font.BOLD, 26));
-		btnNewButton.setBounds(397, 272, 108, 38);
+		btnNewButton.setBounds(397, 273, 108, 38);
 		panel.add(btnNewButton);
 		
 		iniciarFila0(panel);
@@ -90,12 +92,24 @@ public class Usuario {
 		iniciarFila2(panel);
 		iniciarFila3(panel);
 		
+		JButton btnReiniciar = new JButton("Reiniciar");
+		btnReiniciar.setVisible(false);
+		btnReiniciar.setEnabled(false);
+		btnReiniciar.setForeground(Color.DARK_GRAY);
+		btnReiniciar.setFont(new Font("Berlin Sans FB", Font.BOLD, 26));
+		btnReiniciar.setBorder(null);
+		btnReiniciar.setBackground(new Color(173, 216, 230));
+		btnReiniciar.setBounds(383, 273, 131, 38);
+		panel.add(btnReiniciar);
+		
 	}
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
 	}
 	public void iniciarFila3(JPanel panel) {
 		boton30 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton30.setEnabled(false);
+		boton30.setVisible(false);
 		boton30.setBounds(28, 280, 45, 45);
 		boton30.setName("30");
 		boton30.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
@@ -103,6 +117,8 @@ public class Usuario {
 		panel.add(boton30);
 		
 		boton31 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton31.setEnabled(false);
+		boton31.setVisible(false);
 		boton31.setBounds(128, 280, 45, 45);
 		boton31.setName("31");
 		boton31.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
@@ -110,6 +126,8 @@ public class Usuario {
 		panel.add(boton31);
 		
 		boton32 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton32.setEnabled(false);
+		boton32.setVisible(false);
 		boton32.setBounds(228, 280, 45, 45);
 		boton32.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton32.setName("32");
@@ -117,6 +135,8 @@ public class Usuario {
 		panel.add(boton32);
 		
 		boton33 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton33.setEnabled(false);
+		boton33.setVisible(false);
 		boton33.setBounds(328, 280, 45, 45);
 		boton33.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton33.setName("33");
@@ -125,6 +145,8 @@ public class Usuario {
 	}
 	public void iniciarFila2(JPanel panel) {
 		boton20 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton20.setEnabled(false);
+		boton20.setVisible(false);
 		boton20.setBounds(28, 210, 45, 45);
 		boton20.setName("20");
 		boton20.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
@@ -132,6 +154,8 @@ public class Usuario {
 		panel.add(boton20);
 		
 		boton21 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton21.setEnabled(false);
+		boton21.setVisible(false);
 		boton21.setBounds(128, 210, 45, 45);
 		boton21.setName("21");
 		boton21.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
@@ -139,6 +163,8 @@ public class Usuario {
 		panel.add(boton21);
 		
 		boton22 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton22.setEnabled(false);
+		boton22.setVisible(false);
 		boton22.setBounds(228, 210, 45, 45);
 		boton22.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton22.setName("22");
@@ -146,6 +172,8 @@ public class Usuario {
 		panel.add(boton22);
 		
 		boton23 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton23.setEnabled(false);
+		boton23.setVisible(false);
 		boton23.setBounds(328, 210, 45, 45);
 		boton23.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton23.setName("23");
@@ -154,6 +182,8 @@ public class Usuario {
 	}
 	public void iniciarFila1(JPanel panel) {
 		boton10 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton10.setEnabled(false);
+		boton10.setVisible(false);
 		boton10.setBounds(28, 140, 45, 45);
 		boton10.setName("10");
 		boton10.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
@@ -161,6 +191,8 @@ public class Usuario {
 		panel.add(boton10);
 		
 		boton11 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton11.setEnabled(false);
+		boton11.setVisible(false);
 		boton11.setBounds(128, 140, 45, 45);
 		boton11.setName("11");
 		boton11.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
@@ -168,6 +200,8 @@ public class Usuario {
 		panel.add(boton11);
 		
 		boton12 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton12.setEnabled(false);
+		boton12.setVisible(false);
 		boton12.setBounds(228, 140, 45, 45);
 		boton12.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton12.setName("12");
@@ -175,6 +209,8 @@ public class Usuario {
 		panel.add(boton12);
 		
 		boton13 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton13.setEnabled(false);
+		boton13.setVisible(false);
 		boton13.setBounds(328, 140, 45, 45);
 		boton13.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton13.setName("13");
@@ -183,6 +219,8 @@ public class Usuario {
 	}
 	public void iniciarFila0(JPanel panel) {
 		boton0 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton0.setEnabled(false);
+		boton0.setVisible(false);
 		boton0.setBounds(28, 70, 45, 45);
 		boton0.setName("0");
 		boton0.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
@@ -190,6 +228,8 @@ public class Usuario {
 		panel.add(boton0);
 		
 		boton1 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton1.setEnabled(false);
+		boton1.setVisible(false);
 		boton1.setBounds(128, 70, 45, 45);
 		boton1.setName("1");
 		boton1.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
@@ -197,6 +237,8 @@ public class Usuario {
 		panel.add(boton1);
 		
 		boton2 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton2.setEnabled(false);
+		boton2.setVisible(false);
 		boton2.setBounds(228, 70, 45, 45);
 		boton2.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton2.setName("2");
@@ -204,6 +246,8 @@ public class Usuario {
 		panel.add(boton2);
 		
 		boton3 = new JRadioButton(new ImageIcon(Usuario.class.getResource("/recursos/apagada.png")));
+		boton3.setEnabled(false);
+		boton3.setVisible(false);
 		boton3.setBounds(328, 70, 45, 45);
 		boton3.setSelectedIcon(new ImageIcon(Usuario.class.getResource("/recursos/prendida.png")));
 		boton3.setName("3");

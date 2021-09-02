@@ -35,11 +35,11 @@ public class Controlador  {
 		this.tablero.prenderLuzInicio(15);
 		//prendo las luces en los botones
 		prenderLuzInicioBotones();
-		//controla que luz es pulsada
-		controlDeLuces();
+		//controla que luz o boton es pulsado
+		controlListener();
 				
 	}
-	private void controlDeLuces() {
+	private void controlListener() {
 		controlBoton0();
 		controlBoton1();
 		controlBoton2();

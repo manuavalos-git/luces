@@ -1,5 +1,6 @@
 package servicios;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Tablero {
@@ -23,14 +24,55 @@ public class Tablero {
 		return faltaResolver;
 	}
 	public void prenderLuzInicio(int cantLuces) {
-		for(int i=0;i<cantLuces;i++) {
-			Random random1=new Random();
-			Random random2=new Random();
-			int nFila=(int)(random1.nextDouble()*this.filasYColum);
-			int nColum=(int)(random2.nextDouble()*this.filasYColum);
-			this.tabla[nFila][nColum]=true;
-		}
+		elegirCuadro();
 	}
+	private void elegirCuadro() {
+		ArrayList<boolean[][]> estadosIniales=new ArrayList<boolean[][]>();
+		Random random=new Random();
+		int indice=(int)(random.nextDouble()*5);
+		estadosIniales.add(estado0());
+		estadosIniales.add(estado1());
+		estadosIniales.add(estado2());
+		estadosIniales.add(estado3());
+		estadosIniales.add(estado4());
+		setTabla(estadosIniales.get(indice));
+	}
+	private boolean[][] estado4() {
+		boolean[][] estado4= {{false,false,true,false},
+							  {false,true,false,false},
+							  {false,true,true,true},
+							  {false,false,false,false}};
+		return estado4;
+	}
+	private boolean[][] estado3() {
+		boolean[][] estado3= {{true,false,false,false},
+							  {true,true,true,false},
+							  {false,true,true,false},
+							  {true,true,false,true}};
+		return estado3;
+	}
+	private boolean[][] estado2() {
+		boolean[][] estado2= {{false,false,true,true},
+							  {true,true,true,true},
+							  {true,false,false,false},
+							  {true,true,true,true}};
+		return estado2;
+	}
+	private boolean[][] estado1() {
+		boolean[][] estado1= {{true,true,true,true},
+							  {true,true,true,true},
+							  {false,false,false,true},
+							  {true,false,true,false}};
+		return estado1;
+	}
+	private boolean[][] estado0() {
+		boolean[][] estado0= {{true,true,true,false},
+							  {false,true,false,true},
+							  {true,true,false,false},
+							  {false,true,true,true}};
+		return estado0;
+	}
+
 	private void cambiarEstadoLuz(int fila,int colum) {
 		if (this.tabla[fila][colum] ) {
 			this.tabla[fila][colum] =false;
@@ -92,5 +134,7 @@ public class Tablero {
 	public boolean getEstado(int fila,int colum) {
 		return this.tabla[fila][colum];
 	}
-	                          
+	public void setTabla(boolean[][] tabla) {
+		this.tabla = tabla;
+	}                          
 }
