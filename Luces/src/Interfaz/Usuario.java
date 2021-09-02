@@ -31,7 +31,7 @@ public class Usuario {
 						boton0,boton1,boton2,boton3;
 	private JPanel panel;
 	private JButton btnJugar;
-	private JLabel intrucciones, ganaste ;
+	private JLabel intrucciones, ganaste ,intentos;
 	private JButton btnReiniciar;
 	//
 
@@ -69,12 +69,12 @@ public class Usuario {
 		lblNewLabel.setSize(50, 288);
 		panel.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Intentos :");
-		lblNewLabel_1.setVisible(false);
-		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("Rockwell", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(397, 84, 108, 31);
-		panel.add(lblNewLabel_1);
+		intentos= new JLabel("");
+		intentos.setVisible(false);
+		intentos.setForeground(Color.WHITE);
+		intentos.setFont(new Font("Rockwell", Font.BOLD, 16));
+		intentos.setBounds(397, 84, 108, 31);
+		panel.add(intentos);
 		
 		intrucciones = new JLabel("");
 		intrucciones.setIcon(new ImageIcon(Usuario.class.getResource("/recursos/instruc.png")));
@@ -116,6 +116,10 @@ public class Usuario {
 		
 	}
 	
+	public JLabel getIntentos() {
+		return intentos;
+	}
+
 	public JLabel getGanaste() {
 		return ganaste;
 	}

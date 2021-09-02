@@ -17,7 +17,6 @@ public class MVC {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					controlador.getUsuario().getFrame().setVisible(true);
 					controlador.iniciarControlador();
 				} catch (Exception e) {
 					e.printStackTrace();

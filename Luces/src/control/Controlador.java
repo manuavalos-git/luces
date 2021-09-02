@@ -23,13 +23,16 @@ public class Controlador  {
 	private Usuario usuario;
 	private Tablero tablero;
 	private JRadioButton[][] botones;
-	private ActionListener b0;
+	private int intentos;
+	
 	
 	public Controlador(Usuario usuario,Tablero tablero) {
 		this.usuario=usuario;
 		this.tablero=tablero;
 	}
 	public void iniciarControlador() {
+		//hago visible el frame
+		this.usuario.getFrame().setVisible(true);
 		//cargo los botones a una matriz
 		asignarBotones();
 		//prendo las luces en el tablero
@@ -110,6 +113,8 @@ public class Controlador  {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				intentos=0;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 				if(!tablero.faltaResolver()) {
 					usuario.getGanaste().setVisible(false);
 					mostrarFocos();
@@ -136,18 +141,24 @@ public class Controlador  {
 				//deshabilito boton jugar
 				usuario.getBtnJugar().setVisible(false);
 				usuario.getBtnJugar().setEnabled(false);
+				//muestro contador
+				intentos=0;
+				usuario.getIntentos().setVisible(true);
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBtnJugar().addActionListener(bJ);
 	}
 	private void controlBoton0() {
-		b0=new ActionListener() {
+		ActionListener b0=new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				tablero.click(0, 0);
 				click(0, 0);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton0().addActionListener(b0);
@@ -160,6 +171,8 @@ public class Controlador  {
 				tablero.click(0, 1);
 				click(0, 1);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton1().addActionListener(b1);
@@ -172,6 +185,8 @@ public class Controlador  {
 				tablero.click(0, 2);
 				click(0, 2);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton2().addActionListener(b2);
@@ -184,6 +199,8 @@ public class Controlador  {
 				tablero.click(0, 3);
 				click(0, 3);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton3().addActionListener(b3);
@@ -196,6 +213,8 @@ public class Controlador  {
 				tablero.click(1, 0);
 				click(1, 0);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton10().addActionListener(b10);
@@ -208,6 +227,8 @@ public class Controlador  {
 				tablero.click(1, 1);
 				click(1, 1);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton11().addActionListener(b11);
@@ -220,6 +241,8 @@ public class Controlador  {
 				tablero.click(1, 2);
 				click(1, 2);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton12().addActionListener(b12);
@@ -232,6 +255,8 @@ public class Controlador  {
 				tablero.click(1, 3);
 				click(1, 3);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton13().addActionListener(b13);
@@ -244,6 +269,8 @@ public class Controlador  {
 				tablero.click(2, 0);
 				click(2, 0);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton20().addActionListener(b20);
@@ -256,6 +283,8 @@ public class Controlador  {
 				tablero.click(2, 1);
 				click(2, 1);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton21().addActionListener(b21);
@@ -268,6 +297,8 @@ public class Controlador  {
 				tablero.click(2, 2);
 				click(2, 2);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton22().addActionListener(b22);
@@ -280,6 +311,8 @@ public class Controlador  {
 				tablero.click(2, 3);
 				click(2, 3);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton23().addActionListener(b23);
@@ -292,6 +325,8 @@ public class Controlador  {
 				tablero.click(3, 0);
 				click(3, 0);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton30().addActionListener(b30);
@@ -304,6 +339,8 @@ public class Controlador  {
 				tablero.click(3, 1);
 				click(3, 1);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton31().addActionListener(b31);
@@ -316,6 +353,8 @@ public class Controlador  {
 				tablero.click(3, 2);
 				click(3, 2);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton32().addActionListener(b32);
@@ -328,6 +367,8 @@ public class Controlador  {
 				tablero.click(3, 3);
 				click(3, 3);
 				checkJuego();
+				intentos++;
+				usuario.getIntentos().setText("Intentos : "+ intentos);
 			}
 		};
 		this.usuario.getBoton33().addActionListener(b33);
@@ -339,7 +380,7 @@ public class Controlador  {
 			}	
 		}
 	}
-	public void click(int fila,int colum){
+	private void click(int fila,int colum){
 		int filasYColum=4;
 			if(fila>0 && fila<filasYColum-1 && colum>0 && colum<filasYColum-1) {
 				cambiarEstadoLuz(fila-1, colum);
@@ -416,13 +457,7 @@ public class Controlador  {
 		this.botones[3][2]=this.usuario.getBoton32();
 		this.botones[3][3]=this.usuario.getBoton33();
 	}
-	public Usuario getUsuario() {
-		return usuario;
-	}
-	public Tablero getTablero() {
-		return tablero;
-	}
-	public void checkJuego() {
+	private void checkJuego() {
 		if(!this.tablero.faltaResolver()) {
 			finDelJuego();	
 		}
