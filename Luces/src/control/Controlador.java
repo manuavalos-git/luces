@@ -13,7 +13,6 @@ public class Controlador  {
 	private JRadioButton[][] botones;
 	private int intentos;
 	
-	
 	public Controlador(Usuario usuario,Tablero tablero) {
 		this.usuario=usuario;
 		this.tablero=tablero;
@@ -31,7 +30,7 @@ public class Controlador  {
 		controlListener();
 				
 	}
-	public void iniciarControladorReinicio() {
+	private void iniciarControladorReinicio() {
 				//cargo los botones a una matriz
 				asignarBotones();
 				//prendo las luces en el tablero
