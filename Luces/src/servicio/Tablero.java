@@ -1,4 +1,4 @@
-package servicios;
+package servicio;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -7,10 +7,12 @@ public class Tablero {
 	private boolean [][] tabla;
 	private int filasYColum;
 	
-	public Tablero(int fYc) {
-		this.tabla =new boolean [fYc][fYc];
-		this.filasYColum=fYc;
+	//se contruye un tablero de 4x4
+	public Tablero() {
+		this.filasYColum=4;
+		this.tabla =new boolean [this.filasYColum][this.filasYColum];
 	}
+	//recorre el tablero para saber si esta resuelto o falta resolver
 	public boolean faltaResolver(){
 		boolean faltaResolver=false;
 		for(int fila=0;fila<this.filasYColum;fila++) {
@@ -23,9 +25,11 @@ public class Tablero {
 		}
 		return faltaResolver;
 	}
+	//elige entre los cuadros predeterminados con solucion para prender(setear a true) las luces al iniciar
 	public void prenderLuzInicio() {
 		elegirCuadro();
 	}
+	//cambia el estado de las luces vecinas de la luz pulzada
 	public void click(int fila,int colum){
 		cambiarEstadoLuz(fila, colum);
 			if(fila>0 && fila<this.filasYColum-1 && colum>0 && colum<this.filasYColum-1) {
@@ -78,6 +82,7 @@ public class Tablero {
 	public boolean getEstado(int i, int j){
 		return this.tabla[i][j];
 	}
+	//aleatoriamente decide que cuadro usar
 	private void elegirCuadro() {
 		ArrayList<boolean[][]> estadosIniales=new ArrayList<boolean[][]>();
 		Random random=new Random();
@@ -89,6 +94,7 @@ public class Tablero {
 		estadosIniales.add(estado4());
 		this.tabla=estadosIniales.get(indice);
 	}
+	//cuadros posibles
 	private boolean[][] estado4() {
 		boolean[][] estado4= {{false,false,true,false},
 							  {false,true,false,false},
@@ -124,6 +130,7 @@ public class Tablero {
 							  {false,true,true,true}};
 		return estado0;
 	}
+	//cambia el estado de la luz pasada por parametro
 	private void cambiarEstadoLuz(int fila,int colum) {
 		if (this.tabla[fila][colum] ) {
 			this.tabla[fila][colum] =false;

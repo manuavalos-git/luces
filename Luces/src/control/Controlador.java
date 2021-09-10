@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JRadioButton;
 import Interfaz.Usuario;
-import servicios.Tablero;
+import servicio.Tablero;
 
 public class Controlador  {
 	private Usuario usuario;
@@ -17,6 +17,7 @@ public class Controlador  {
 		this.usuario=usuario;
 		this.tablero=tablero;
 	}
+	//inicio
 	public void iniciarControlador() {
 		//hago visible el frame
 		this.usuario.getFrame().setVisible(true);
@@ -30,6 +31,7 @@ public class Controlador  {
 		controlListener();
 				
 	}
+	//reinicio
 	private void iniciarControladorReinicio() {
 				//cargo los botones a una matriz
 				asignarBotones();
@@ -38,6 +40,7 @@ public class Controlador  {
 				//prendo las luces en los botones
 				prenderLuzInicioBotones();
 	}
+	//chequeo las acciones del usuario
 	private void controlListener() {
 		controlJugar();
 		controlReiniciar();
@@ -58,6 +61,7 @@ public class Controlador  {
 		controlBoton32();
 		controlBoton33();
 	}
+	// hago visible los focos despues de pulsar en "jugar"
 	private void mostrarFocos() {
 		usuario.getBoton0().setVisible(true);
 		usuario.getBoton1().setVisible(true);
@@ -76,6 +80,7 @@ public class Controlador  {
 		usuario.getBoton32().setVisible(true);
 		usuario.getBoton33().setVisible(true);
 	}
+	//habilito los focos
 	private void habilitarFocos() {
 		usuario.getBoton0().setEnabled(true);
 		usuario.getBoton1().setEnabled(true);
@@ -94,6 +99,7 @@ public class Controlador  {
 		usuario.getBoton32().setEnabled(true);
 		usuario.getBoton33().setEnabled(true);
 	}
+	//chequeo el boton "reiniciar"
 	private void controlReiniciar() {
 		
 		ActionListener bR=new ActionListener() {
@@ -112,6 +118,7 @@ public class Controlador  {
 		};
 		this.usuario.getBtnReiniciar().addActionListener(bR);
 	}
+	//chequeo el boton "jugar"
 	private void controlJugar() {
 		ActionListener bJ=new ActionListener() {
 			
@@ -360,6 +367,7 @@ public class Controlador  {
 		};
 		this.usuario.getBoton33().addActionListener(b33);
 	}
+	//ve que focos estan prendidos y los muestra al usuario
 	private void prenderLuzInicioBotones() {
 		for(int i=0;i<4;i++) {
 			for(int j=0;j<4;j++) {
@@ -367,6 +375,7 @@ public class Controlador  {
 			}	
 		}
 	}
+	//chequea que boton fue pulsado
 	private void click(int fila,int colum){
 		int filasYColum=4;
 			if(fila>0 && fila<filasYColum-1 && colum>0 && colum<filasYColum-1) {
@@ -416,6 +425,7 @@ public class Controlador  {
 				cambiarEstadoLuz(fila, colum-1);
 			}
 	}
+	//cambia el estado de la luz
 	private void cambiarEstadoLuz(int fila, int colum) {
 		if (this.botones[fila][colum].isSelected() ) {
 			this.botones[fila][colum].setSelected(false);
@@ -444,11 +454,13 @@ public class Controlador  {
 		this.botones[3][2]=this.usuario.getBoton32();
 		this.botones[3][3]=this.usuario.getBoton33();
 	}
+	//le pregunta al tablero si falta resolver
 	private void checkJuego() {
 		if(!this.tablero.faltaResolver()) {
 			finDelJuego();	
 		}
 	}
+	//oculta los botones y muestra el cartel "ganaste"
 	private void finDelJuego() {
 		for(int i=0;i<4;i++) {
 			for(int j=0;j<4;j++) {
