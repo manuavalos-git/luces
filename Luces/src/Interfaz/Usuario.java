@@ -11,23 +11,26 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 public class Usuario {
-	private JFrame frame;
+	private JFrame frmFueraLuces;
 	private JRadioButton boton30,boton31,boton32,boton33,
 						boton20,boton21,boton22,boton23,
 						boton10,boton11,boton12,boton13,
 						boton0,boton1,boton2,boton3;
 	private JPanel panel;
 	private JButton btnJugar;
-	private JLabel intrucciones, ganaste ,intentos;
+	private JLabel intrucciones, ganaste ,intentos,titulo;
 	private JButton btnReiniciar;
 
 
 	public Usuario() {
 		initialize();
 	}
-	
+	public JLabel getTitulo() {
+		return titulo;
+	}
 	public JLabel getIntentos() {
 		return intentos;
 	}
@@ -41,11 +44,14 @@ public class Usuario {
 	}
 
 	public void setFrame(JFrame frame) {
-		this.frame = frame;
+		this.frmFueraLuces = frame;
+		frmFueraLuces.setResizable(false);
+		frmFueraLuces.setTitle("FUERA LUCES");
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Usuario.class.getResource("/recursos/prendida.png")));
 	}
 	
 	public JFrame getFrame() {
-		return frame;
+		return frmFueraLuces;
 	}
 	
 	public JPanel getPanel() {
@@ -126,7 +132,7 @@ public class Usuario {
 	
 	private void initialize() {
 		setFrame(new JFrame());
-		getFrame().setBounds(100, 100, 600, 400);
+		getFrame().setBounds(100, 100, 680, 440);
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.panel = new JPanel();
@@ -134,25 +140,26 @@ public class Usuario {
 		getFrame().getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Usuario.class.getResource("/recursos/logo.png")));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel.setFont(new Font("Monospaced", lblNewLabel.getFont().getStyle(), lblNewLabel.getFont().getSize() + 7));
-		lblNewLabel.setAlignmentY(Component.TOP_ALIGNMENT);
-		lblNewLabel.setLocation(524, 37);
-		lblNewLabel.setSize(50, 288);
-		panel.add(lblNewLabel);
+		titulo = new JLabel("");
+		titulo.setVisible(false);
+		titulo.setIcon(new ImageIcon(Usuario.class.getResource("/recursos/TITUL.png")));
+		titulo.setHorizontalAlignment(SwingConstants.LEFT);
+		titulo.setFont(new Font("Monospaced", titulo.getFont().getStyle(), titulo.getFont().getSize() + 7));
+		titulo.setAlignmentY(Component.TOP_ALIGNMENT);
+		titulo.setLocation(473, 50);
+		titulo.setSize(131, 253);
+		panel.add(titulo);
 		
 		intentos= new JLabel("");
 		intentos.setVisible(false);
 		intentos.setForeground(Color.WHITE);
 		intentos.setFont(new Font("Rockwell", Font.BOLD, 16));
-		intentos.setBounds(397, 84, 108, 31);
+		intentos.setBounds(40, 32, 108, 31);
 		panel.add(intentos);
 		
 		intrucciones = new JLabel("");
-		intrucciones.setIcon(new ImageIcon(Usuario.class.getResource("/recursos/instruc.png")));
-		intrucciones.setBounds(52, 70, 321, 203);
+		intrucciones.setIcon(new ImageIcon(Usuario.class.getResource("/recursos/INSTRUCCIONES.png")));
+		intrucciones.setBounds(79, 55, 512, 262);
 		panel.add(intrucciones);
 		
 		btnJugar = new JButton("Jugar");
@@ -162,7 +169,7 @@ public class Usuario {
 		btnJugar.setBackground(new Color(173, 216, 230));
 		btnJugar.setForeground(Color.DARK_GRAY);
 		btnJugar.setFont(new Font("Berlin Sans FB", Font.BOLD, 26));
-		btnJugar.setBounds(397, 273, 108, 38);
+		btnJugar.setBounds(290, 325, 108, 38);
 		panel.add(btnJugar);
 		
 		btnReiniciar = new JButton("Reiniciar");
@@ -173,7 +180,7 @@ public class Usuario {
 		btnReiniciar.setFont(new Font("Berlin Sans FB", Font.BOLD, 26));
 		btnReiniciar.setBorder(null);
 		btnReiniciar.setBackground(new Color(173, 216, 230));
-		btnReiniciar.setBounds(383, 273, 131, 38);
+		btnReiniciar.setBounds(473, 314, 131, 38);
 		panel.add(btnReiniciar);
 		
 		ganaste = new JLabel("");

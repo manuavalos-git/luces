@@ -135,6 +135,8 @@ public class Controlador  {
 				//deshabilito boton jugar
 				usuario.getBtnJugar().setVisible(false);
 				usuario.getBtnJugar().setEnabled(false);
+				//muestro titulo
+				usuario.getTitulo().setVisible(true);
 				//muestro contador
 				intentos=0;
 				usuario.getIntentos().setVisible(true);
